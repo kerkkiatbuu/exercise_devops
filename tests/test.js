@@ -1,7 +1,6 @@
 const assert = require('assert')
-const { request } = require('http')
-const assert = require('supertest')
-const assert = require('../index')
+const request = require('supertest')
+const app = require('../index')
 
 
 describe('Validate setting the test', () => {
@@ -12,6 +11,16 @@ describe('Validate setting the test', () => {
 
 describe('GET "/"', () => {
     it('respond with Hello!', (done) => {
-        request(app).getHeader('/').expect('Hello!', done)
+        request(app).get('/').expect('Hello!', done)
+    })
+})
+
+describe('GET "/item"', () => {
+    it('respond with item', (done) => {
+        let want = [
+            { id: 1, name:'iPhone12 Pro Max'},
+            { id: 2, name:'Google Pixel 5'}
+        ]
+        request(app).get('/item').expect(want, done)
     })
 })
