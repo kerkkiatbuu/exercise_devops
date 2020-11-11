@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/test.js --exit",
-    "unit-test": "mocha ./tests/unit-test.js --exit"
+    "test": "mocha ./tests/test.js --exit"
   },
   "keywords": [],
   "author": "",
